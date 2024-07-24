@@ -82,3 +82,46 @@ int main()
 
     return 0; 
 }
+
+// reverse word question
+// // Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+void reverseWord(string str){
+    
+    stack<string> st;
+    string word;
+    int n =str.size();
+    
+    int i=0;
+    
+    
+    for(int j=0; j<=n; ++j){
+        if(j==n || str[j]==' '){
+            word=str.substr(i,j-i);
+            st.push(word);
+            i=j+1;
+        }
+
+    }
+    
+    while(!st.empty()){
+        cout<<st.top()<<" ";
+        st.pop();
+    }
+    cout<<endl;
+}
+
+
+int main() {
+    // Write C++ code here
+    
+    string str;
+    getline(cin, str);
+        
+    reverseWord(str);
+    
+    return 0;
+}
+
