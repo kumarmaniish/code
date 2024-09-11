@@ -131,3 +131,62 @@ int main() {
 
     return 0;
 }
+
+50 to 55 -> 5+0+5+1+5+2+5+3+54+55
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+int totalSum(int a, int b){
+    int sum = 0;
+    for(int i = a; i <= b; i++){
+        string first = to_string(i);
+        for(int j = 0; j < first.size(); j++){
+            sum += first[j] - '0';
+        }
+    }
+    return sum;
+}
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+    
+    cout << totalSum(a, b) << endl;
+
+    return 0;
+}
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int countUD(string str){
+    
+    map<char,int> mpp;
+    for(int i=0; i<str.size(); i++){
+        mpp[str[i]]++;
+    }
+    
+    int forU=0,forD=0;
+    
+    for(auto it:mpp){
+        if(it.first=='U')
+        forU=it.second;
+        else
+        forD=it.second;
+    }
+    
+    return abs(forU-forD);
+}
+
+
+int main() {
+    // Write C++ code here
+    string str;
+    cin>>str;
+    
+    cout<<countUD(str)<<endl;
+
+    return 0;
+}
