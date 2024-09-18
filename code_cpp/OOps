@@ -1,0 +1,315 @@
+// Online C++ compiler to run C++ program online
+// Oops
+
+//class
+
+#include<bits/stdc++.h>
+using namespace std;
+/***
+class Rectangle{
+    // define attribute
+    private:
+        int length;
+        int breadth;
+        
+    public:
+        Rectangle(int length=3, int breadth=4){
+            this->length=length;
+            this->breadth=breadth;
+        }
+        int area(){
+            return length*breadth;
+        }
+        int area(int length, int breadth){
+            return length*breadth;
+        }
+};
+
+//other way to definig the class
+
+class Rectangle{
+    int length;
+    int breadth;
+    
+    public:
+        Rectangle(int l=3, int b=4);
+        int area();
+        int area(int length,int breadth);
+        void dimension();
+};
+
+Rectangle::Rectangle(int l,int b){
+    this->length=l;
+    this->breadth=b;
+}
+int Rectangle::area(){
+    return length*breadth;
+}
+int Rectangle::area(int l, int b){
+    return l*b;
+}
+
+void Rectangle::dimension(){
+    cout<<"length is "<<length<<endl;
+    cout<<"breadth is "<<breadth<<endl;
+}
+
+class car{
+    private:
+        int id;
+        string modelName;
+        
+    public:
+        car(int id, string modelName){
+            this->id=id;
+            this->modelName=modelName;
+        }
+        
+        void setId(int id){
+            this->id=id;
+        }
+        int getId(){
+            return id;
+        }
+        
+        void setName(string modelName){
+            this->modelName=modelName;
+        }
+        string getName(){
+            return modelName;
+        }
+        
+        ~car(){
+            cout<<"destructor called"<<endl;
+        }
+};
+
+//inheritence
+class Vehicle {
+    private:
+        string brand;
+
+    public:
+        Vehicle(string brand){
+            this->brand=brand;
+        }
+
+        void start() {
+            cout << "Vehicle is running..." << endl;
+        }
+
+        string getBrand() const{
+            return brand;
+        }
+};
+
+class Car : public Vehicle {
+    private:
+        int id;
+        string modelName;
+
+    public:
+        Car(string brand, int id, string modelName) :Vehicle(brand), id(id), modelName(modelName) {}
+
+        void setId(int id) {
+            this->id = id;
+        }
+
+        int getId() const {
+            return id;
+        }
+
+        void setName(string modelName) {
+            this->modelName = modelName;
+        }
+
+        string getName() const {
+            return modelName;
+        }
+
+        void display() const {
+            cout << "Brand: " << getBrand() << endl;
+            cout << "ID: " << getId() << endl;
+            cout << "Model Name: " << getName() << endl;
+        }
+};
+
+
+// abstarction or method overridding
+
+class shape{
+    public:
+     virtual void draw()=0;
+};
+
+class circle : public shape{
+    public:
+        void draw() override{
+            cout<<"circle called"<<endl;
+        }
+};
+
+class rectangle : public shape{
+    
+    public:
+        void draw() override{
+            cout<<"rectangle called"<<endl;
+        }
+};
+
+
+//polymorphism
+// compile time-> method overloading
+
+class overloading{
+    public:
+        int a;
+        int b;
+        int c;
+        
+        
+        //constructor overloading
+        overloading(int a){
+            this->a=a;
+        }
+        
+        overloading(int a, int b){
+            this->a=a;
+            this->b=b;
+        }
+        
+        overloading(int a, int b, int c){
+            this->a=a;
+            this->b=b;
+            this->c=c;
+        }
+        
+        //method overloading
+        void display(){
+            cout<<a<<endl;
+        }
+        void display(int a, int b){
+            cout<<a<<" "<<b<<endl;
+        }
+        
+        void display(int a, int b, int c){
+            cout<<a<<" "<<b<<" "<<c<<endl;
+        }
+};
+
+class sumOfN{
+  public:
+    int add(int a, int b){
+        return a+b;
+    }
+    
+    int add(int a, int b, int c){
+        return a+b+c;
+    }
+    
+    int add(double a, double b){
+        return a+b;
+    }
+};
+
+//operator overloading
+
+class Complex{
+    private:
+        int real;
+        int img;
+        
+    public:
+    //overload constructor
+        Complex(){
+            real=0;
+            img=0;
+        }
+        Complex(int real,int img){
+            this->real=real;
+            this->img=img;
+        }
+        
+        void print(){
+            cout<<real<<" + "<<img<<"i"<<endl;
+        }
+        
+        // now overload the operator
+        Complex operator +(Complex c){
+            Complex temp;
+            temp.real=real+c.real;
+            temp.img=img+c.img;
+            
+            return temp;
+        }
+};*/
+
+//friend function
+ class A{
+    private:
+        int num;
+    
+    public:
+        A(int num){
+            this->num=num;
+        }
+        
+        friend void modify(A obj){
+            obj.num+=10;
+            cout<<obj.num<<endl;
+        }
+};
+
+int main(){
+    
+    A obj(5);
+    modify(obj);
+    
+    // Complex c1(4,5);
+    // Complex c2(3,6);
+    
+    // Complex c3=c1+c2;
+    // // c3=c1+c2;
+    
+    // c3.print();
+    
+    // // sumOfN s;
+    // // cout<<s.add(3,4)<<" ";
+    // // cout<<s.add(3,5,7)<<" ";
+    // cout<<s.add(3.0,5.0);
+    
+    // overloading o;
+    // o.display(5,7);
+    
+    // shape *s1=new circle();
+    // shape *s2=new rectangle();
+    // s2->draw();x
+    // s1->draw();
+    
+    // delete s1;
+    // delete s2;
+    // Car c("Honda", 5, "Manish");
+    // c.start();
+    // c.display();
+    
+    
+    // Rectangle rec;
+    // cout<<rec.area()<<endl;
+    // cout<<rec.area(5,6)<<endl;
+    
+    // car c(6,"toyata");
+    // cout<<c.getId()<<" ";
+    // cout<<c.getName()<<" ";
+    
+    // c.setId(5);
+    // c.setName("Honda");
+    
+    // cout<<endl;
+    
+    // cout<<c.getId()<<" ";
+    // cout<<c.getName()<<" ";
+    
+    
+    
+    return 0;
+}
