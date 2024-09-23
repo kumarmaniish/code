@@ -1,0 +1,45 @@
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> reverseArray(vector<int> list){
+    
+    int first=0;
+    int last=list.size()-1;
+    
+    while(first<last){
+        swap(list[first],list[last]);
+        first++;
+        last--;
+    }
+    
+    return list;
+}
+
+vector<int> swapAlternate(vector<int> list){
+    
+    for(int i=0; i<list.size()-1; i+=2){
+        swap(list[i],list[i+1]);
+    }
+    return list;
+}
+
+
+
+int main() {
+    // Write C++ code here
+    int n;cin>>n;
+    vector<int> list(n);
+    
+    for(int i=0; i<n; i++){
+        cin>>list[i];
+    }
+    
+    // list=reverseArray(list);
+    list=swapAlternate(list);
+    for(int i=0; i<n; i++){
+        cout<<list[i]<<" ";
+    }
+
+    return 0;
+}
