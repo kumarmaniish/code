@@ -1,0 +1,45 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    //Reverse Array
+    public static ArrayList<Integer> reverseArray(ArrayList<Integer> list){
+        
+        int first = 0;
+        int last = list.size()-1;
+        
+        while(first<last){
+            Collections.swap(list,first,last);
+            first++;
+            last--;
+        }
+        
+        return list;
+    } 
+    
+    public static ArrayList<Integer> swapAlternate(ArrayList<Integer> list){
+        
+        for(int i=0; i<list.size()-1; i+=2){
+            
+            Collections.swap(list,i,i+1);
+        }
+        
+        return list;
+    }
+    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        ArrayList<Integer> list = new ArrayList<>(n);
+        for(int i=0; i<n; i++){
+            list.add(sc.nextInt());
+        }
+        
+        // list=reverseArray(list);
+        list=swapAlternate(list);
+        for(int i=0; i<n; i++){
+            System.out.print(list.get(i)+" ");
+        }
+    }
+}
