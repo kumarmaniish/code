@@ -1,0 +1,17 @@
+1. callback function
+
+A callback function is a function passed into another function as an argument. It is called, or "triggered," once a certain task is completed. For example, when you click a button on a webpage, a callback function might run to handle what happens after the click. It's like giving a set of instructions that will be followed when a specific event happens.
+
+
+function modifyArray(arr,callback){
+    arr.push(100);
+    callback();
+}
+
+var arr=[1,2,3,4,5];
+modifyArray(arr,function(){
+    console.log("array has been modified",arr)
+})
+
+
+2.
