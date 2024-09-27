@@ -1,0 +1,41 @@
+/*//this keyword
+
+function greet(username){
+    
+    return `Hello! ${this.username}`;
+}
+
+function greetUser(greet,username){
+    return greet(username);
+}
+
+console.log(greetUser(greet,'Alice'))
+
+console.log(this)
+
+//apply bind and call
+
+function getName(user){
+    return `${user}, ${this.fname} ${this.lname}`;
+}
+
+let p = {
+    fname:'Manish',
+    lname:' kumar'
+}
+
+//call
+console.log(getName.call(p, 'hey!'))
+
+console.log(getName.apply(p, ['hi']));
+
+
+const fullname = getName.bind(p,'hello');
+console.log(fullname())
+
+*/
+
+const str = /lo/;  // syntex for writing regex is /sdf/
+
+console.log(str.exec('hello world'));
+console.log(str.test('hello manish'));
