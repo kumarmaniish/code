@@ -39,3 +39,85 @@ const str = /lo/;  // syntex for writing regex is /sdf/
 
 console.log(str.exec('hello world'));
 console.log(str.test('hello manish'));
+
+
+
+// currying
+
+// function orderPizza(size){
+//     return function(topping){
+//         return `You ordered the ${size} pizza with ${topping}`;
+//     }
+// }
+
+// const orderLargePizza=orderPizza('large');
+// console.log(orderLargePizza('Pepperoin'));
+
+
+// function myName(){
+//     var x= 5;
+//     return x;
+// }
+
+// console.log(myName());
+
+ 
+// scope chain in js
+
+// var y=75;
+// function fav(){
+//     var x=35;
+//     function getfav(){
+//         return x;
+//     }
+    
+//     function anothfav(){
+//         return y;
+//     }
+    
+//     console.log(getfav());
+//     console.log(anothfav());
+// }
+
+// fav();
+
+
+// closure in js
+
+// function randomFunc(){
+//     var obj = {
+//         name:'Manish',
+//         age:22
+//     }
+    
+//     return function(){
+//         console.log(obj.name+' is unlucky! ');
+//     }
+// }
+
+
+// const main=randomFunc();// returns a function so to store in var first then execute
+// main();
+
+
+// memoization
+
+function memoAddTo256(){
+    var char={};
+    return function(num){
+        if(num in char){
+            console.log('Cached value');
+            return char[num]
+        }
+        else{
+            char[num]=num+256;
+            return char[num];
+        }
+    }
+}
+
+var memoizedFunc=memoAddTo256();
+console.log(memoizedFunc(20));
+console.log(memoizedFunc(20));
+
+
