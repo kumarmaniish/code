@@ -1,1 +1,35 @@
 
+// count occrueneces of target
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int countOccur(vector<int> arr,int target){
+    map<int, int> mpp;
+    for(auto it:arr){
+        mpp[it]++;
+    }
+    
+    for(auto it:mpp){
+        if(it.first==target){
+            return it.second;
+        }
+    }
+    return -1;
+}
+
+int main(){
+    
+    int n;cin>>n;
+    vector<int> arr(n);
+    for(int i=0; i<n; i++){
+        cin>>arr[i];
+    }
+    
+    int target; cin>>target;
+    cout<<countOccur(arr,target);
+    
+    
+    return 0;
+}
+
