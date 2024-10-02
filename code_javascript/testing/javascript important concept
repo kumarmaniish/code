@@ -121,3 +121,40 @@ console.log(memoizedFunc(20));
 console.log(memoizedFunc(20));
 
 
+
+function myapp(a){
+    return `number is ${a}`;
+}
+var a =25;
+console.log(myapp(a));
+
+//The spread operator allows you to expand or spread elements of an iterable (like an array or an object) into individual elements. It's commonly used for combining arrays or passing multiple arguments to functions.
+
+const arr1=[2,3,4];
+const arr2=[6,7,8];
+
+console.log(...arr1, ...arr2);
+
+// The rest parameter allows you to represent an indefinite number of arguments as an array. It's useful when you want a function to accept any number of arguments
+
+function addNumber(...number){
+    return number.reduce((sum,num)=> sum+num, 0);
+}
+
+const result=addNumber(1,2,3,4,5);
+console.log(result);
+
+
+//object destructuring
+const classDetails = {
+  strength: 78,
+  benches: 39,
+  blackBoard:1
+}
+
+const {strength:classStrength, benches:classBenches,blackBoard:classBlackBoard} = classDetails;
+
+console.log(classStrength); // Outputs 78
+console.log(classBenches); // Outputs 39
+console.log(classBlackBoard); // Outputs 1
+
