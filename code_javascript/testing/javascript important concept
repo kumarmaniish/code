@@ -182,3 +182,126 @@ function sumOfThree(... elements){
 sumOfThree(1,2,4)
 .then(result=>console.log(result))
 .catch(result=>console.log("error"));
+
+
+
+
+
+
+// before es6 only constructor function is there
+
+// function Student(name, roll, age){
+//     this.name=name;
+//     this.roll=roll;
+//     this.age=age;
+// }
+
+// Student.prototype.getDetails=function(){
+//     return `name is ${this.name}, roll number is ${this.roll}, age is ${this.age}`;
+// }
+
+
+// let student=new Student("Anish",2,20);
+// console.log(student.getDetails());
+
+
+
+
+// classes in javascript after es6
+
+// class Student{
+//     constructor(n, r, a){
+//         this.name=n;
+//         this.roll=r;
+//         this.age=a;
+//     }
+    
+//     getDetails(){
+//         return `Name is ${this.name} with roll no is ${this.roll} and age is ${this.age}`;
+//     }
+// }
+
+// let student=new Student("Manish ", 1, 22);
+// console.log(student.getDetails());
+
+
+
+// generator function
+
+// function* genFun(){
+//     let arr={
+//         name:"Manish",
+//         age:22
+//     };
+//     console.log(arr);
+//     console.log("hi");
+//     yield 3;
+//     yield 4;
+//     return "hello";
+// }
+
+// const gene=genFun();
+// console.log(gene);
+// console.log(gene.next());
+// console.log(gene.next());
+// console.log(gene.next());
+
+
+
+// fibonacci series+
+// function* fibonacci(){
+//     let [a,b]=[0,1];
+//     while(true){
+//         yield a;
+//         [a,b]=[b,a+b];
+//     }
+// }
+
+// const fibo=fibonacci();
+// console.log(fibo.next().value);
+// console.log(fibo.next().value);
+// console.log(fibo.next().value);
+// console.log(fibo.next().value);
+// console.log(fibo.next().value);
+// console.log(fibo.next().done);
+
+
+// weak set
+
+// const st = new Set([1,1,1,2,3,4]);
+// console.log(st);
+
+// const st1=new WeakSet([3,4,5]);
+// console.log(st1);// error because it contains only objects
+
+let obj1=[
+    {
+        name:"Abhishek",
+        college:"IIT_MADRAS",
+        age: 22
+    },
+    {
+       name:"Anurag",
+       college:"LMJPIT",
+       age:23
+    },
+    {
+        name:"Manish",
+        college:"NIET",
+        age:22
+    },
+    {
+        name:"Abhishek",
+        college:"IIT_MADRAS",
+        age: 22
+    }
+];
+
+const st1=new WeakSet([obj1]);
+console.log(st1);
+console.log(st1.has(obj1));
+
+
+
+
+
