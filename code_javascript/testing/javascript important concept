@@ -302,6 +302,93 @@ console.log(st1);
 console.log(st1.has(obj1));
 
 
+//callbacks
 
+// function fetchUserData(callbacks){
+//     setTimeout(()=>{
+//         const userData={
+//             name:"Manish",
+//             age: 22
+//         }; 
+//         callbacks(userData);
+//     },2000)// 2 second delays
+// }
+
+// fetchUserData((data)=>{
+//     console.log(`user name is ${data.name} and age is ${data.age}`)
+// })
+
+
+// weak map
+
+// let obj={name:"Manish"};
+// const map1=new WeakMap();
+// map1.set(obj,{age:22});
+// console.log(map1);
+
+
+// object destructing
+// before es6
+
+// const classDetails = {
+//   strength: 78,
+//   benches: 39,
+//   blackBoard:1
+// }
+
+// const classStrength = classDetails.strength;
+// console.log(classStrength);
+// const classBenches = classDetails.benches;
+// console.log(classBenches);
+// const classBlackBoard = classDetails.blackBoard;
+// console.log(classBlackBoard);
+
+
+// after es6;
+// const classDetails = {
+//   strength: 78,
+//   benches: 39,
+//   blackboard:1
+// }
+
+
+// const {strength, benches, blackboard}=classDetails;
+// console.log(strength);
+// console.log(benches);
+// console.log(blackboard);
+
+
+//array destructuring
+//before es6
+// const arr = [1, 2, 3, 4];
+// const first = arr[0];
+// const second = arr[1];
+// const third = arr[2];
+// const fourth = arr[3];
+
+
+// after es6
+// const arr =[1,2,3];
+// const [one, two, three]=arr;
+// console.log(one);
+
+
+
+//valid anagram
+
+var first = "Manish";
+var second = "AnishM";
+
+function isAnagram(one, two){
+    var a = one.toLowerCase();
+    var b = two.toLowerCase();
+    
+    a=a.split('').sort().join('');
+    b=b.split('').sort().join('');
+    
+    return a==b;
+}
+
+console.log(isAnagram(first,second));
 
 
