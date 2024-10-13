@@ -14,4 +14,61 @@ modifyArray(arr,function(){
 })
 
 
-2.
+const data = {
+    id:"1"
+}
+
+data.id="2";
+Object.freeze(data);
+data.id="3";
+console.log(data.id);
+
+
+let a=[1,2,3];
+let b=[1,2,3];
+console.log(a==b);
+console.log(a===b);
+
+console.log([]==[]);
+console.log([] === [])
+
+const animals=['dog','cat','elephant','horse','sheep','lion','tiger'];
+
+animals.forEach(a=>{
+    console.log(a);
+    })
+    
+const newAnimal=animals.map((element)=>{
+    const animalUpper = element.toUpperCase();
+    return animalUpper;
+})
+
+console.log(newAnimal)
+newAnimal.forEach(el=>{
+    console.log(el);
+})
+
+for(const el of animals){
+    console.log(el.toUpperCase());
+}
+
+let object = {
+    1:'hello',
+    2:'hey',
+    3:'hii'
+}
+
+for(const key in object){
+    console.log(key);
+    console.log(object[key])
+}
+
+
+let arr1 = [1,[2,3,[4,[5,[6,[7]]],[8,[9]]]]];
+let arr=[[1,2,3],[4,5,6],[7,8,9]];
+const newArr = arr.flat(Infinity);
+console.log(newArr);
+
+
+var x;
+console.log(x);
