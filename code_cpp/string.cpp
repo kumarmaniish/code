@@ -104,3 +104,63 @@ int main()
     
     return 0;
 }
+
+// Online C++ compiler to run C++ program online
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<char> duplicate(string str){
+    vector<char> duplicateChar;
+    int n=str.size();
+    map<char,int> mpp;
+    for(int i=0; i<n; i++){
+        mpp[str[i]]++;
+    }
+    
+    for(auto t: mpp){
+        if(t.second>1){
+            duplicateChar.push_back(t.first);
+        }
+    }
+    return duplicateChar;
+}
+
+bool isAnagram(string str1, string str2){
+    
+    sort(str1.begin(),str1.end());
+    sort(str2.begin(),str2.end());
+    
+    return str1==str2;
+}
+
+bool containOnlyDigit(string str){
+    
+    string digit = "0123456789";
+    for(char ch: str){
+        if(digit.find(ch)==string::npos){
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+int main() {
+    string str;
+    cin>>str;
+    
+    cout<<containOnlyDigit(str);
+    
+    // string str1,str2;
+    // cin>>str1>>str2;
+    
+    // cout<<isAnagram(str1,str2)<<endl;
+    
+    // vector<char> result = duplicate(str);
+    // for(auto it: result){
+    //     cout<<it<<" ";
+    // }
+    
+
+    return 0;
+}
