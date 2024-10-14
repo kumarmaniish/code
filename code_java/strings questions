@@ -1,0 +1,61 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class HelloWorld {
+    public static ArrayList<Character> duplicate(String str){
+        
+        ArrayList<Character> duplicateChar=new ArrayList<>();
+        int n=str.length();
+        
+        HashMap <Character, Integer> hsp = new HashMap<>();
+        for(int i=0; i<n; i++){
+            hsp.put(str.charAt(i),hsp.getOrDefault(str.charAt(i),0)+1);
+        }
+        
+        for(char key:hsp.keySet()){
+            if(hsp.get(key)>1){
+                duplicateChar.add(key);
+            }
+        }
+        return duplicateChar;
+    }
+    public static boolean isAnagram(String str1, String str2){
+        
+        ArrayList<Character> list1 = new ArrayList<>();
+        ArrayList<Character> list2 = new ArrayList<>();
+        
+        for(char ch : str1.toCharArray()){
+            list1.add(ch);
+        }
+        for(char ch : str2.toCharArray()){
+            list2.add(ch);
+        }
+        
+        Collections.sort(list1);
+        Collections.sort(list2);
+        
+        return list1.equals(list2);
+        
+    }
+    
+    public static boolean containOnlyDigit(String str){
+        String digit="0123456789";
+        for(char it : str.toCharArray()){
+            if(!digit.contains(String.valueOf(it))){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        String str1 = sc.nextLine();
+        System.out.println(containOnlyDigit(str1));
+        
+        // String str2 = sc.nextLine();
+        // System.out.println(isAnagram(str1,str2));
+        // ArrayList<Character> result = duplicate(str);
+        // System.out.println(result);
+    }
+}
